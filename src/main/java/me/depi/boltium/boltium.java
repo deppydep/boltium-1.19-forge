@@ -1,6 +1,7 @@
 package me.depi.boltium;
 
 import com.mojang.logging.LogUtils;
+import me.depi.boltium.item.ModItems;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,6 +23,8 @@ public class boltium
     public boltium()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
